@@ -18,7 +18,6 @@
                                         Welcome to STRIDDERR Global Services</p>
                                     <h1 class="display-1 mb-4 animated slideInDown">...Building, Construction, Real Estate
                                     </h1>
-                                    {{-- <a href="service.php" class="btn btn-primary py-3 px-5 animated slideInDown">Explore More</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -34,7 +33,6 @@
                                         class="d-inline-block border border-white rounded text-primary fw-semi-bold py-1 px-3 animated slideInDown">
                                         Welcome to STRIDDER Global Services</p>
                                     <h1 class="display-1 mb-4 animated slideInDown">Building Construction</h1>
-                                    {{-- <a href="service.php" class="btn btn-primary py-3 px-5 animated slideInDown">Explore More</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -195,23 +193,22 @@
                     <h1 class="display-5 mb-4">Reasons Why People Are Choosing Us!</h1>
                     <p class="mb-4">
 
-                        <b>1. Unmatched Quality and Craftsmanship</b><br>
+                        <b>Unmatched Quality and Craftsmanship</b><br>
 
                         At STRIDDERR Global Services Ltd, we understand that quality is paramount in construction. Our team of experienced professionals is committed to delivering superior craftsmanship in every project we undertake. From residential homes to commercial buildings and civil infrastructure, we use only the highest quality materials and adhere to rigorous standards to ensure the longevity and durability of our constructions. Our meticulous attention to detail and dedication to excellence result in structures that not only meet but exceed our clients' expectations.
                         <br><br>
 
-                        <b>2. Comprehensive and Customized Services</b>
+                        <b>Comprehensive and Customized Services</b>
                         <br>
                         We offer a wide range of services tailored to meet the unique needs of our clients. Whether you require architectural design, residential construction, or large-scale civil infrastructure projects, STRIDDERR Global Services Ltd provides end-to-end solutions. Our comprehensive services include site analysis, space planning, 3D modeling, interior design, and project management. By working closely with our clients, we ensure that every aspect of the project aligns with their vision, budget, and timeline. This personalized approach sets us apart and ensures that each project is a true reflection of our clients' aspirations.
                         <br><br>
 
-                        <b>3. Commitment to Sustainability and Innovation</b>
+                        <b>Commitment to Sustainability and Innovation</b>
                         <br>
                         In today's world, sustainability is more important than ever. At STRIDDERR Global Services Ltd, we are committed to incorporating sustainable practices into all our projects. We utilize eco-friendly materials, energy-efficient designs, and cutting-edge technologies to minimize our environmental impact and promote long-term sustainability. Our innovative approach to construction not only benefits the environment but also provides our clients with energy-efficient and cost-effective solutions. By choosing us, clients are investing in a future where their structures are both beautiful and environmentally responsible.
                         <br><br>
                         People choose STRIDDERR Global Services Ltd because we deliver exceptional quality, offer customized and comprehensive services, and are committed to sustainability and innovation. Our reputation for excellence, our dedication to client satisfaction, and our forward-thinking approach make us the preferred choice for construction and architectural services.
                     </p>
-                    <a class="btn btn-primary py-3 px-5" href="service.php">Explore More</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="row g-4 align-items-center">
