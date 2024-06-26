@@ -33,8 +33,8 @@ class AppServiceProvider extends ServiceProvider
             if (Auth::check())
             {
                 $view->with('login_user', Auth::user());
-                $view->with('mytasks', tasks::where('assigned_to',Auth::user()->id)->where('status','Not Completed')->get());
-                $view->with('clients', User::select('id','name','status')->where('business_id',Auth::user()->business_id)->get());
+                $view->with('mytasks', tasks::where('assigned_to',Auth::user()->id)->get());
+                $view->with('clients', User::select('id','name','company_name','status')->where('business_id',Auth::user()->business_id)->get());
                 $view->with('staff', User::select('id','name','phone_number','status')->where('business_id',Auth::user()->business_id)->get());
 
                 $view->with('userbusinesses',businesses::select('id','business_name','businessgroup_id')->where('user_id',Auth::user()->id)->orWhere('id',Auth()->user()->business_id)->get());

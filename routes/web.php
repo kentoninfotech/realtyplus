@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [App\Http\Controllers\ProjectsController::class, 'landing']);
 
 Auth::routes();
 
@@ -24,12 +22,17 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // CLIENTS
 Route::get('clients', [App\Http\Controllers\HomeController::class, 'clients'])->name('clients');
+Route::get('new-client', [App\Http\Controllers\HomeController::class, 'newClient'])->name('new-client');
+Route::post('saveClient', [App\Http\Controllers\HomeController::class, 'saveClient'])->name('saveClient');
+Route::get('edit-client/{cid}', [App\Http\Controllers\HomeController::class, 'editClient'])->name('edit-client');
 
 
 // PROJECTS
 Route::get('projects', [App\Http\Controllers\ProjectsController::class, 'index'])->name('projects');
 Route::get('client-projects/{cid}', [App\Http\Controllers\ProjectsController::class, 'clientProjects'])->name('client-projects');
 Route::get('/new-project/{cid}', [App\Http\Controllers\ProjectsController::class, 'create'])->name('new-project');
+Route::get('/edit-project/{pid}', [App\Http\Controllers\ProjectsController::class, 'editProject'])->name('edit-project');
+Route::get('/addproject', [App\Http\Controllers\ProjectsController::class, 'newProject'])->name('addproject');
 Route::post('save-project', [App\Http\Controllers\ProjectsController::class, 'store'])->name('save-project');
 Route::get('/project-dashboard/{pid}', [App\Http\Controllers\ProjectsController::class, 'projectDashboard'])->name('project-dashboard');
 
@@ -54,6 +57,11 @@ Route::get('task/{tid}', [App\Http\Controllers\TasksController::class, 'viewTask
 Route::post('addWorkers', [App\Http\Controllers\TasksController::class, 'addWorkers'])->name('addWorkers');
 Route::post('addMaterialsUsed', [App\Http\Controllers\TasksController::class, 'addMaterialsUsed'])->name('addMaterialsUsed');
 Route::post('change_task_status', [App\Http\Controllers\TasksController::class, 'change_task_status'])->name('change_task_status');
+Route::get('del-task/{tid}', [App\Http\Controllers\TasksController::class, 'destroy'])->name('del-task');
+Route::get('new-task', [App\Http\Controllers\TasksController::class, 'newTask'])->name('new-task');
+Route::post('saveTask', [App\Http\Controllers\TasksController::class, 'saveTask'])->name('saveTask');
+Route::get('/completetask/{id}', [App\Http\Controllers\TasksController::class, 'completetask'])->name('completetask')->middleware('role:Worker,Admin,Followup,Pastor,Super');
+Route::get('/inprogresstask/{id}', [App\Http\Controllers\TasksController::class, 'inprogresstask'])->name('inprogresstask')->middleware('role:Worker,Admin,Followup,Pastor,Super');
 
 
 //REPORT
@@ -65,9 +73,11 @@ Route::get('task-report/{trid}', [App\Http\Controllers\MilestoneReportsControlle
 Route::post('change_task_report_status', [App\Http\Controllers\MilestoneReportsController::class, 'change_task_report_status'])->name('change_task_report_status');
 
 //REPORT
-Route::get('add-file', [App\Http\Controllers\ProjectFilesController::class, 'create'])->name('add-file');
+Route::get('/add-file', [App\Http\Controllers\ProjectFilesController::class, 'create'])->name('add-file');
+Route::get('/addp-file/{pid}', [App\Http\Controllers\ProjectFilesController::class, 'addProjectFile'])->name('addp-file');
+
 Route::post('save-file', [App\Http\Controllers\ProjectFilesController::class, 'store'])->name('save-file');
-Route::get('file/{fid}', [App\Http\Controllers\ProjectFilesController::class, 'file'])->name('file');
+Route::get('/file/{fid}', [App\Http\Controllers\ProjectFilesController::class, 'file'])->name('file');
 
 // MATERIALS
 Route::get('/materials', [App\Http\Controllers\MaterialsController::class, 'index'])->name('materials')->middleware('role:Admin,Super,Staff');
@@ -107,4 +117,9 @@ Route::get('/delete-cat/{id}', [App\Http\Controllers\CategoriesController::class
 // TRANSACTIONS
 Route::get('/transactions', [App\Http\Controllers\TransactionsController::class, 'index'])->name('transactions')->middleware('role:Finance,Admin,Super');
 Route::post('/addtransaction', [App\Http\Controllers\TransactionsController::class, 'store'])->name('addtransaction')->middleware('role:Finance,Admin,Super');
-Route::get('/delete-trans/{id}', [App\Http\Controllers\TransactionsController::class, 'destroy'])->name('delete-trans')->middleware('role:Finance,Super');
+Route::get('/delete-trans/{id}', [App\Http\Controllers\TransactionsController::class, 'delTrans'])->name('delete-trans')->middleware('role:Finance,Super');
+
+Route::post('/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings')->middleware('role:Super');
+
+//LOGOUT
+Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class,'logout']);
