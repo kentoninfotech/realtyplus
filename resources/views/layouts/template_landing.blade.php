@@ -140,7 +140,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="https://stridderr.com.ng/">Stridderr Global Services Ltd</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="https://stridderr.com.ng/">Stridderr Global Services Ltd</a>, All Right Reserved. <a href="{{url('home')}}">ADMIN</a>
                 </div>
 
             </div>
