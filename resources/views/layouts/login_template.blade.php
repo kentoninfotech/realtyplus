@@ -17,6 +17,12 @@
     .register-box{
       width: 40% !important;
     }
+
+    @media (max-width: 767px) {
+        .register-box {
+            width: 90% !important;
+        }
+    }
   </style>
 </head>
 <body class="hold-transition register-page">
