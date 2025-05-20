@@ -35,6 +35,10 @@ Route::get('/edit-project/{pid}', [App\Http\Controllers\ProjectsController::clas
 Route::get('/addproject', [App\Http\Controllers\ProjectsController::class, 'newProject'])->name('addproject');
 Route::post('save-project', [App\Http\Controllers\ProjectsController::class, 'store'])->name('save-project');
 Route::get('/project-dashboard/{pid}', [App\Http\Controllers\ProjectsController::class, 'projectDashboard'])->name('project-dashboard');
+// PROJECTS
+Route::get('/project/{pid}/transactions', [App\Http\Controllers\ProjectsController::class, 'projectTransactions'])->name('project-transactions');
+Route::get('/project/{pid}/materials', [App\Http\Controllers\ProjectsController::class, 'projectMaterials'])->name('project-materials');
+Route::get('/project/{pid}/workers', [App\Http\Controllers\ProjectsController::class, 'projectWorkers'])->name('project-workers');
 
 
 // Route::get('/project-milestone/{cid}', [App\Http\Controllers\ProjectsController::class, 'create'])->name('project-milestone');

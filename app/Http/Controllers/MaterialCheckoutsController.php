@@ -16,7 +16,7 @@ class MaterialCheckoutsController extends Controller
      */
     public function index()
     {
-        $mcheckouts = material_checkouts::paginate(50);
+        $mcheckouts = material_checkouts::with(['task', 'task.project'])->latest()->paginate(50);
         return view('mcheckouts', compact('mcheckouts'));
     }
 

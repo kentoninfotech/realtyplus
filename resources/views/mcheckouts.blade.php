@@ -1,7 +1,6 @@
 @extends('layouts.template')
 
 @section('content')
-@php $modal="material"; $pagetype = "Table"; @endphp
 
 <div class="content-header">
   <div class="container-fluid">
@@ -177,7 +176,7 @@
                         <label for="task_id">Task.</label>
                         <select class="form-control" name="task_id" id="task_id">
                             @foreach ($business->tasks as $pjs)
-                                <option value="{{$pjs->task_id}}">{{$pjs->subject}}  (<i>Project:</i> {{$pjs->project->title}})</option>
+                                <option value="{{$pjs->task_id}}">{{$pjs->subject}}  (<i>Project:</i> {{$pjs->project->title ?? 'N/A'}})</option>
                             @endforeach
 
                         </select>

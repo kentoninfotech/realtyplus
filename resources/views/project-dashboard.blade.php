@@ -107,9 +107,9 @@
 
                             <div class="list-group">
                                 <a href="#" class="list-group-item list-group-item-action active">Menu </a>
-                                <a href="/project/{{ $project->id }}/transactions"
+                                <a href="{{ route('project-transactions', $project->id) }}"
                                     class="list-group-item list-group-item-action">Transactions</a>
-                                <a href="/project/{{ $project->id }}/materials"
+                                <a href="{{ route('project-materials', $project->id) }}"
                                     class="list-group-item list-group-item-action">Materials Used</a>
                                 <a href="/project/{{ $project->id }}/workers"
                                     class="list-group-item list-group-item-action">Workers</a>

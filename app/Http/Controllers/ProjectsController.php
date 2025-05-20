@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\projects;
+use App\Models\transactions;
+use App\Models\accountheads;
+use App\Models\User;
+use App\Models\material_checkouts;
 use App\Http\Requests\StoreprojectsRequest;
 use App\Http\Requests\UpdateprojectsRequest;
 use Illuminate\Http\Request;
@@ -99,6 +103,54 @@ class ProjectsController extends Controller
         $message = 'The project has been '.$outcome.' successfully';
 
         return redirect()->route('projects')->with(['message'=>$message]);
+    }
+
+    /**
+     * Show all transaction related to a project.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function projectTransactions($pid)
+    {
+        $transactions = transactions::where('id',$pid)->paginate(20);
+        $accountheads = accountheads::select('title','category')->get();
+        $users = User::select('id','name')->get();
+        $project = projects::where('id',$pid)->first();
+        return view('project-transactions', compact('transactions','accountheads','users','project'));
+    }
+
+    /**
+     * Show all materials related to a project.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function projectMaterials($pid)
+    {
+        $materials = material_checkouts::with(['task.project'])
+             ->whereHas('task', function ($query) use ($pid) {
+                $query->where('project_id', $pid);
+            })->paginate(10);
+
+        $project = projects::where('id',$pid)->first();
+        
+        return view('project-materials', compact('materials', 'project'));
+    }
+
+    /**
+     * Show all workers related to a project.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function projectWorkers($pid)
+    {
+        $workers = task_workers::with(['task.project'])
+             ->whereHas('task', function ($query) use ($pid) {
+                $query->where('project_id', $pid);
+            })->paginate(10);
+
+        $project = projects::where('id',$pid)->first();
+        
+        return view('project-workers', compact('workers', 'project'));
     }
 
     /**
