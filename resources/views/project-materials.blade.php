@@ -29,7 +29,7 @@
 
                 </div>
                 <div class="panel-body">
-                    <table class="table responsive-table" id="products">
+                    <table class="table responsive-table" id="products" style="width:100% !important">
                         <thead>
                             <tr>
                                 <th>Material Name</th>

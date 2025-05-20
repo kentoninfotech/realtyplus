@@ -11,6 +11,7 @@ use App\Http\Requests\StoreprojectsRequest;
 use App\Http\Requests\UpdateprojectsRequest;
 use Illuminate\Http\Request;
 use App\Models\project_files;
+use App\Models\task_workers;
 
 class ProjectsController extends Controller
 {
@@ -112,7 +113,7 @@ class ProjectsController extends Controller
      */
     public function projectTransactions($pid)
     {
-        $transactions = transactions::where('id',$pid)->paginate(20);
+        $transactions = transactions::where('project_id',$pid)->paginate(20);
         $accountheads = accountheads::select('title','category')->get();
         $users = User::select('id','name')->get();
         $project = projects::where('id',$pid)->first();
@@ -148,7 +149,7 @@ class ProjectsController extends Controller
                 $query->where('project_id', $pid);
             })->paginate(10);
 
-        $project = projects::where('id',$pid)->first();
+        $project = projects::select('title','location')->where('id',$pid)->first();
         
         return view('project-workers', compact('workers', 'project'));
     }

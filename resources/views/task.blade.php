@@ -107,7 +107,7 @@
             <div class=" card card-primary card-outline" style="padding: 10px !important;">
                 <div class="widget-heading">Add Workers</div>
                 <hr>
-                <form action="{{ route('addWorkers') }}" method="POST">
+                <form action="{{ route('addWorkers') }}" method="POST" id="addWorkers">
                     @csrf
                     <input type="hidden" name="task_id" value="{{ $task->id }}">
 
@@ -158,7 +158,7 @@
                         </tbody>
                     </table>
 
-                    <a class="btn btn-sm btn-success adds_item" href="#" id="100">
+                    <a class="btn btn-sm btn-success adds_item" href="#addWorkers" id="100">
                         Add Worker/Personnel
                         <i class="lnr lnr-add"></i>
                     </a>
@@ -174,7 +174,7 @@
             <div class="card card-primary card-outline" style="padding: 10px !important;">
                 <div class="widget-heading">Add Materials Used</div>
                 <hr>
-                <form action="{{ route('addMaterialsUsed') }}" method="POST">
+                <form action="{{ route('addMaterialsUsed') }}" method="POST" id="addMaterialsUsed">
                     @csrf
                     <input type="hidden" name="task_id" value="{{ $task->id }}">
 
@@ -226,7 +226,7 @@
                         </tbody>
                     </table>
 
-                    <a class="btn btn-sm btn-success add_item" href="#" id="1">
+                    <a class="btn btn-sm btn-success add_item" href="#addMaterialsUsed" id="1">
                         Add Material
                         <i class="lnr lnr-add"></i>
                     </a>

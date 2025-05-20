@@ -54,12 +54,12 @@
                                     <td>{{$mtc->checkoutby->name}}</td>
                                     <td>{{$mtc->approvedby->name}}</td>
                                     <td>{{$mtc->dated}}</td>
-                                    <td>{{$mtc->business->business_name}}</td>
+                                    <td>{{$mtc->business->business_name ?? ''}}</td>
 
-                                    <td>
+                                    <td class="btn-group">
 
-                                        <button class="label label-primary" id="ach{{$mtc->id}}" onclick="materialcheckout({{$mtc->id}})"  data-toggle="modal" data-target="#materialcheckout"  data-material_name="{{$mtc->material->name}}" data-material_id="{{$mtc->material_id}}" data-task_id="{{$mtc->task_id}}" data-quantity="{{$mtc->quantity}}" data-details="{{$mtc->details}}"  data-checkout_by="{{$mtc->checkout_by}}"  data-approved_by="{{$mtc->approved_by}}" data-dated="{{$mtc->dated}}" data-setting_id="{{$mtc->setting_id}}">Edit</button>
-                                        <a href="/delete-mtc/{{$mtc->id}}/{{$mtc->material_id}}/{{$mtc->quantity}}" class="label label-danger" onclick="return confirm('Are you sure you want to delete the material checkout record, this will return the {{$mtc->material->name}} with quantity {{$mtc->quantity}} back to stock?')">Delete</a>
+                                        <button class="btn btn-primary btn-xs" id="ach{{$mtc->id}}" onclick="materialcheckout({{$mtc->id}})"  data-toggle="modal" data-target="#materialcheckout"  data-material_name="{{$mtc->material->name}}" data-material_id="{{$mtc->material_id}}" data-task_id="{{$mtc->task_id}}" data-quantity="{{$mtc->quantity}}" data-details="{{$mtc->details}}"  data-checkout_by="{{$mtc->checkout_by}}"  data-approved_by="{{$mtc->approved_by}}" data-dated="{{$mtc->dated}}" data-setting_id="{{$mtc->setting_id}}">Edit</button>
+                                        <a href="/delete-mtc/{{$mtc->id}}/{{$mtc->material_id}}/{{$mtc->quantity}}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete the material checkout record, this will return the {{$mtc->material->name}} with quantity {{$mtc->quantity}} back to stock?')">Delete</a>
                                     </td>
 
                                 </tr>

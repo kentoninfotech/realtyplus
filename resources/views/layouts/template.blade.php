@@ -38,6 +38,10 @@
             width: 100% !important;
             overflow: auto !important;
         }
+
+        .m-0{
+            font-size: 1.5em !important;
+        }
     </style>
 </head>
 

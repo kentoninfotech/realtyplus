@@ -20,7 +20,7 @@ class CreateMaterialsTable extends Migration
             $table->string('category',50)->nullable();
             $table->string('measurement_unit',20)->nullable();
             $table->string('picture',50)->nullable();
-            $table->double('size',10,2)->nullable();
+            $table->string('size',50)->nullable();
             $table->double('cost_per',10,2)->nullable();
             $table->unsignedBigInteger('business_id')->index()->nullable();
             $table->foreign('business_id')->references('id')->on('businesses');
