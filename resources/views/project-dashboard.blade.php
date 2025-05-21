@@ -111,7 +111,7 @@
                                     class="list-group-item list-group-item-action">Transactions</a>
                                 <a href="{{ route('project-materials', $project->id) }}"
                                     class="list-group-item list-group-item-action">Materials Used</a>
-                                <a href="/project/{{ $project->id }}/workers"
+                                <a href="{{ route('project-workers', $project->id) }}"
                                     class="list-group-item list-group-item-action">Workers</a>
                                 <a href="/project/{{ $project->id }}/reports"
                                     class="list-group-item list-group-item-action">Reports</a>

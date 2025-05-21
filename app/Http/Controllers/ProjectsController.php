@@ -12,6 +12,9 @@ use App\Http\Requests\UpdateprojectsRequest;
 use Illuminate\Http\Request;
 use App\Models\project_files;
 use App\Models\task_workers;
+use App\Models\tasks;
+use App\Models\milestone_reports;
+use App\Models\project_milestones;
 
 class ProjectsController extends Controller
 {
@@ -153,6 +156,48 @@ class ProjectsController extends Controller
         
         return view('project-workers', compact('workers', 'project'));
     }
+
+    /**
+     * Show all tasks related to a project.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function projectTasks($pid)
+    {
+        $tasks = tasks::where('project_id', $pid)->paginate(10);
+        $project = projects::select('title','location')->where('id',$pid)->first();
+        return view('project-tasks', compact('tasks', 'project'));
+    }
+
+    /**
+     * Show all tasks report related to a project.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function projectReports($pid)
+    {
+        $reports = milestone_reports::with(['task.project'])
+             ->whereHas('task', function ($query) use ($pid) {
+                $query->where('project_id', $pid);
+            })->paginate(10);
+        $project = projects::select('title','location')->where('id',$pid)->first();
+        
+        return view('project-reports', compact('reports', 'project'));
+    }
+
+    /**
+     * Show all milestones related to a project.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function projectMilestones($pid)
+    {
+        $milestones = project_milestones::where('project_id', $pid)->paginate(10);
+        $project = projects::select('title','location')->where('id',$pid)->first();
+        
+        return view('project-milestones', compact('milestones', 'project'));
+    }
+
 
     /**
      * Display the specified resource.
