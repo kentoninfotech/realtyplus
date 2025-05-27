@@ -19,29 +19,28 @@ class CreateAccountheadsTable extends Migration
             $table->string('category',50)->nullable();
             $table->string('type',50)->nullable();
             $table->string('description',50)->nullable();
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
             $table->timestamps();
         });
 
-        DB::table('accountheads')->insert(
-            array(
-                'title' => 'Client Payment',
-                'category' => 'Inflow',
-                'type'=> 'Payment Recieved',
-                'description'=>'All payments made by owner of the project',
-                'business_id'=>1
+        // DB::table('accountheads')->insert(
+        //     array(
+        //         'title' => 'Client Payment',
+        //         'category' => 'Inflow',
+        //         'type'=> 'Payment Recieved',
+        //         'description'=>'All payments made by owner of the project',
+        //         'business_id'=>1
 
-            ));
-        DB::table('accountheads')->insert(
-            array(
-                'title' => 'Material Supply',
-                'category' => 'Expenditure',
-                'type'=> 'Building Material',
-                'description'=>'For payment of material supplies',
-                'business_id'=>1
+        //     ));
+        // DB::table('accountheads')->insert(
+        //     array(
+        //         'title' => 'Material Supply',
+        //         'category' => 'Expenditure',
+        //         'type'=> 'Building Material',
+        //         'description'=>'For payment of material supplies',
+        //         'business_id'=>1
 
-            ));
+        //     ));
     }
 
     /**

@@ -30,9 +30,7 @@ class CreateMaterialCheckoutsTable extends Migration
             $table->double('quantity',10,2);
             $table->date('dated');
             $table->string('details',100);
-
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
             $table->timestamps();
         });
     }

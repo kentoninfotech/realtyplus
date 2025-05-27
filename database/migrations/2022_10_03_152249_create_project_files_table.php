@@ -26,8 +26,7 @@ class CreateProjectFilesTable extends Migration
             $table->string('details',255)->nullable();
             $table->string('featured',5)->nullable();
             $table->string('cloud_location',30)->nullable();
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
             $table->timestamps();
         });
     }

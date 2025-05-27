@@ -28,8 +28,7 @@ class CreateTransactionsTable extends Migration
             $table->string('recorded_by',50)->nullable();
             $table->unsignedBigInteger('project_id')->index()->nullable();
             $table->foreign('project_id')->references('id')->on('projects');
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -29,8 +29,7 @@ class CreateMilestoneReportsTable extends Migration
             $table->foreign('recorded_by')->references('id')->on('users')->onDelete('cascade');
             $table->string('category',30)->nullable();
             $table->string('approval',30)->nullable();
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
             $table->timestamps();
         });
     }

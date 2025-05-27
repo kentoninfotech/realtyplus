@@ -26,6 +26,11 @@ Route::get('new-client', [App\Http\Controllers\HomeController::class, 'newClient
 Route::post('saveClient', [App\Http\Controllers\HomeController::class, 'saveClient'])->name('saveClient');
 Route::get('edit-client/{cid}', [App\Http\Controllers\HomeController::class, 'editClient'])->name('edit-client');
 
+// PERSONNELS
+Route::get('new-personnel', [App\Http\Controllers\PersonnelController::class, 'newPersonnel'])->name('new.personnel');
+Route::post('new-personnel', [App\Http\Controllers\PersonnelController::class, 'CreatePersonnel'])->name('create.personnel');
+Route::post('edit-personnel/{id}', [App\Http\Controllers\PersonnelController::class, 'editPersonnel'])->name('edit.personnel');
+
 
 // PROJECTS
 Route::get('projects', [App\Http\Controllers\ProjectsController::class, 'index'])->name('projects');

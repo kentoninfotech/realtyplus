@@ -135,6 +135,7 @@
                             <option value="Staff">Staff</option>
                             <option value="Manager">Manager</option>
                             <option value="Super">Super</option>
+                            <option value="Client">Client</option>
                         </select>
                     </div>
                 </div>

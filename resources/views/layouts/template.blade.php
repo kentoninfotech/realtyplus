@@ -109,7 +109,7 @@
                                     class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
-                                        Brad Diesel
+                                        {{ auth()->user()->name }}
                                         <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
                                     </h3>
                                     <p class="text-sm">Call me whenever you can...</p>
@@ -337,7 +337,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ url('accountheads') }}" class="nav-link">
+                                    <a href="{{ url('account-heads') }}" class="nav-link">
                                         <i class="far fa-user-plus nav-icon"></i>
                                         <p>Manage Account Heads</p>
                                     </a>
@@ -357,6 +357,12 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('new.personnel') }}" class="nav-link">
+                                        <i class="far fa-user nav-icon"></i>
+                                        <p>New Personnel</p>
+                                    </a>
+                                </li>
                                 <li class="nav-item">
                                     <a href="{{ url('workers') }}" class="nav-link">
                                         <i class="far fa-user nav-icon"></i>
@@ -394,6 +400,13 @@
                                         data-target="#settings">
                                         <i class="far fa-user nav-icon"></i>
                                         <p>System Settings</p>
+                                    </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('system_roles') }}" class="nav-link">
+                                        <i class="far fa-user nav-icon"></i>
+                                        <p>Manage Staff</p>
                                     </a>
 
                                 </li>
@@ -502,7 +515,7 @@
                             <label for="ministrygroup_id" class="control-label ">Ministry Group/Headquarter</label>
                             <select class="form-control" name="ministrygroup_id" id="ministrygroup_id">
                                 <option value="{{ $business->businessgroup_id }}" selected>
-                                    {{ $businessgroups->where('id', $business->businessgroup_id)->first()->businessgroup_name }}
+                                    <!-- {{-- $businessgroups->where('id', $business->businessgroup_id)->first()->businessgroup_name --}} -->
                                 </option>
                                 @foreach ($businessgroups as $mg)
                                     <option value="{{ $mg->id }}">{{ $mg->businessgroup_name }}</option>

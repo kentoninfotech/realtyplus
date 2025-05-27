@@ -21,8 +21,7 @@ class CreateTaskWorkersTable extends Migration
             $table->foreign('worker_id')->references('id')->on('users')->onDelete('cascade');
             $table->double('amount_paid',10,2)->nullable();
             $table->date('work_date')->nullable();
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
             $table->timestamps();
         });
     }

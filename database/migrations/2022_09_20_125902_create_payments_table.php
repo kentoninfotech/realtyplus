@@ -21,8 +21,7 @@ class CreatePaymentsTable extends Migration
                $table->integer('target_views')->default(0)->nullable();
             $table->date('payment_date')->nullable();
 
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
 
             $table->timestamps();
         });

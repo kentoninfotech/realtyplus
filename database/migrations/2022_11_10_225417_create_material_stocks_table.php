@@ -19,8 +19,7 @@ class CreateMaterialStocksTable extends Migration
             $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade');
             $table->double('quantity',10,2)->nullable();
             $table->dateTime('dated_added')->nullable();
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
             $table->timestamps();
         });
     }

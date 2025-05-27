@@ -24,8 +24,7 @@ class CreateMaterialDamagesTable extends Migration
             $table->date('dated')->nullable();
             $table->unsignedBigInteger('damaged_by')->nullable();
             $table->foreign('damaged_by')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
             $table->timestamps();
         });
     }

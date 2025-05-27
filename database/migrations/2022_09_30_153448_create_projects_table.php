@@ -27,8 +27,7 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('project_manager')->index();
             $table->foreign('project_manager')->references('id')->on('users')->onDelete('cascade');
             $table->string('status',30)->nullable();
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
             $table->timestamps();
         });
     }

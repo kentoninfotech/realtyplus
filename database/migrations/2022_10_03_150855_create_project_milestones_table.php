@@ -21,13 +21,10 @@ class CreateProjectMilestonesTable extends Migration
             $table->date('start_date')->nullable();
             $table->date('end_date',30)->nullable();
             $table->text('details')->nullable();
-            $table->unsignedBigInteger('assigned_to')->index();
-            $table->foreign('assigned_to')->references('id')->on('users')->onDelete('cascade');
-            $table->double('estimated_cost',10,2)->nullable();
+            $table->foreignId('assigned_to')->nullable()->constrained('users')->nullOnDelete();
             $table->double('estimated_cost',10,2)->nullable();
             $table->string('status',30)->nullable();
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
             $table->timestamps();
         });
     }

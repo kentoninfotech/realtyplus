@@ -21,8 +21,7 @@ class CreateSuppliersTable extends Migration
             $table->string('phone_number',30)->nullable();
             $table->string('details',100)->nullable();
             $table->string('address',100)->nullable();
-            $table->unsignedBigInteger('business_id')->index()->nullable();
-            $table->foreign('business_id')->references('id')->on('businesses');
+            $table->foreignId('business_id')->nullable()->constrained('businesses')->onDelete('cascade');
             $table->timestamps();
         });
     }
