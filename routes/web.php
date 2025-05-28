@@ -31,6 +31,11 @@ Route::get('new-personnel', [App\Http\Controllers\PersonnelController::class, 'n
 Route::post('new-personnel', [App\Http\Controllers\PersonnelController::class, 'CreatePersonnel'])->name('create.personnel');
 Route::post('edit-personnel/{id}', [App\Http\Controllers\PersonnelController::class, 'editPersonnel'])->name('edit.personnel');
 
+// ROLES & PERMISSIONS
+Route::resource('roles', App\Http\Controllers\RoleController::class);
+Route::get('/users', [App\Http\Controllers\UserPermissionController::class, 'index'])->name('users.index');
+Route::get('/users/{user}/edit', [App\Http\Controllers\UserPermissionController::class, 'edit'])->name('users.edit');
+Route::post('/users/{user}/update', [App\Http\Controllers\UserPermissionController::class, 'update'])->name('users.update');
 
 // PROJECTS
 Route::get('projects', [App\Http\Controllers\ProjectsController::class, 'index'])->name('projects');
