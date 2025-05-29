@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\ProjectsController::class, 'landing']);
 
-Auth::routes();
+
 
 // HOME
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -27,9 +27,13 @@ Route::post('saveClient', [App\Http\Controllers\HomeController::class, 'saveClie
 Route::get('edit-client/{cid}', [App\Http\Controllers\HomeController::class, 'editClient'])->name('edit-client');
 
 // PERSONNELS
+Route::get('personnel', [App\Http\Controllers\PersonnelController::class, 'index'])->name('personnel');
 Route::get('new-personnel', [App\Http\Controllers\PersonnelController::class, 'newPersonnel'])->name('new.personnel');
-Route::post('new-personnel', [App\Http\Controllers\PersonnelController::class, 'CreatePersonnel'])->name('create.personnel');
-Route::post('edit-personnel/{id}', [App\Http\Controllers\PersonnelController::class, 'editPersonnel'])->name('edit.personnel');
+Route::get('personnel/{id}', [App\Http\Controllers\PersonnelController::class, 'showPersonnel'])->name('show.personnel');
+Route::post('new-personnel', [App\Http\Controllers\PersonnelController::class, 'createPersonnel'])->name('create.personnel');
+Route::get('edit-personnel/{id}', [App\Http\Controllers\PersonnelController::class, 'editPersonnel'])->name('edit.personnel');
+Route::post('edit-personnel', [App\Http\Controllers\PersonnelController::class, 'updatePersonnel']);
+
 
 // ROLES & PERMISSIONS
 Route::resource('roles', App\Http\Controllers\RoleController::class);
@@ -139,3 +143,5 @@ Route::post('/settings', [App\Http\Controllers\HomeController::class, 'settings'
 
 //LOGOUT
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class,'logout']);
+
+Auth::routes();

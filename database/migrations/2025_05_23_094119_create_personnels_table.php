@@ -28,13 +28,13 @@ class CreatePersonnelsTable extends Migration
             // $table->string('guarantor')->nullable();
             $table->string('salary')->nullable();
             $table->string('highest_certificate')->nullable();
-            $table->string('staffid')->nullable();
+            $table->string('staff_id', 9)->unique()->nullable();
             $table->string('cv')->nullable();
             $table->string('dob')->nullable();
             $table->string('state_of_origin')->nullable();
             $table->string('nationality')->nullable();
             $table->string('marital_status')->nullable();
-            $table->string('employement_date')->nullable();
+            $table->string('employment_date')->nullable();
             $table->string('picture')->nullable();
             $table->timestamps();
         });

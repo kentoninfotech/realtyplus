@@ -498,7 +498,7 @@
                     <div class="form-check">
                         <input type="checkbox" name="create_new_ministry" id="create_new_ministry"
                             class="form-check-input">
-                        <label class="form-check-label"><small style="color: {{ $business->color }}"><i>Click Here to
+                        <label class="form-check-label"><small style="color: {{ Auth::user()->business->primary_color }}"><i>Click Here to
                                     Create New Business</i></small></label>
                     </div>
 
@@ -506,11 +506,11 @@
                         enctype="multipart/form-data">
                         @csrf
 
-                        <input type="hidden" name="id" value="{{ $business->id }}">
+                        <input type="hidden" name="id" value="{{ Auth::user()->business->id }}">
 
-                        <input type="hidden" name="oldlogo" value="{{ $business->logo }}">
+                        <input type="hidden" name="oldlogo" value="{{ Auth::user()->business->logo }}">
 
-                        <input type="hidden" name="oldbackground" value="{{ $business->background }}">
+                        <input type="hidden" name="oldbackground" value="{{ Auth::user()->business->background }}">
 
                         <input type="hidden" name="newministry" id="newministry" value="">
 
@@ -530,19 +530,19 @@
                         <div class="form-group">
                             <label for="ministry_name">Ministry / Church Name</label>
                             <input type="text" name="ministry_name" id="ministry_name" class="form-control"
-                                value="{{ $business->business_name }}">
+                                value="{{ Auth::user()->business->business_name }}">
                         </div>
 
                         <div class="form-group">
                             <label for="motto">Motto</label>
                             <input type="text" name="motto" id="motto" class="form-control"
-                                value="{{ $business->motto }}">
+                                value="{{ Auth::user()->business->motto }}">
                         </div>
 
                         <div class="form-group">
                             <label for="address">Address</label>
                             <input type="text" name="address" id="address" class="form-control"
-                                value="{{ $business->address }}">
+                                value="{{ Auth::user()->business->address }}">
                         </div>
 
 
@@ -561,13 +561,13 @@
                         <div class="form-group">
                             <label for="color">Choose System Colour</label>
                             <input type="color" name="color" id="color" class="form-control"
-                                value="{{ $business->color }}">
+                                value="{{ Auth::user()->business->color }}">
                         </div>
 
                         <div class="form-group">
                             <label for="user_id" class="control-label ">Admin User</label>
                             <select class="form-control" name="user_id" id="user_id">
-                                <option value="{{ $business->user_id }}" selected>{{ $business->user->name }}
+                                <option value="{{ Auth::user()->business->user_id }}" selected>{{ Auth::user()->business->user->name }}
                                 </option>
                                 @foreach ($staff as $hm)
                                     <option value="{{ $hm->id }}">{{ $hm->name }}</option>
@@ -579,7 +579,7 @@
                         <div class="form-group">
                             <label for="mode">Mode</label>
                             <select class="form-control" name="mode" id="mode">
-                                <option value="{{ $business->mode }}">{{ $business->mode }}</option>
+                                <option value="{{ $business->mode }}">{{ Auth::user()->business->mode }}</option>
                                 <option value="Active" selected>Active</option>
                                 <option value="Maintenance">Maintenance</option>
                             </select>
@@ -908,6 +908,9 @@
             });
         </script>
     @endif
+
+    @yield('script')
+
 </body>
 
 </html>

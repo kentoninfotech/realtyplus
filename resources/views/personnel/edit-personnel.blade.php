@@ -42,26 +42,26 @@
                 <div class="row form-group">
                     <div class="col-lg-4">
                         <label class="control-label col-lg-12" for="content">Firstname:</label>
-                        <input name="firstname" type="text" class="form-control" id="firstname" maxlength="50" placeholder="Firstname" value="{{ old('firstname') }}">
+                        <input name="firstname" type="text" class="form-control" id="firstname" maxlength="50" placeholder="Firstname" value="{{ old('firstname', $user->personnel->firstname ?? '') }}">
                     </div>
                     <div class="col-lg-4">
                         <label class="control-label col-lg-12" for="content">Surname: </label>
-                        <input name="surname" type="text" class="form-control" placeholder="Surname" value="{{ old('surname') }}" maxlength="50">
+                        <input name="surname" type="text" class="form-control" placeholder="Surname" value="{{ old('surname', $user->personnel->surname ?? '') }}" maxlength="50">
                     </div>
                     <div class="col-lg-4">
                         <label class="control-label col-lg-12" for="content">Othernames: </label>
-                        <input name="othername" type="text" class="form-control" placeholder="Othernames" value="{{ old('othername') }}" maxlength="50">
+                        <input name="othername" type="text" class="form-control" placeholder="Othernames" value="{{ old('othername', $user->personnel->othername ?? '') }}" maxlength="50">
                     </div>
                 </div>
 
                     <div class="row form-group">
                         <div class="col-lg-3">
                         <label class="control-label col-lg-12" for="content">Date of Birth: </label>
-                    <input name="dob" type="date" class="form-control" placeholder="Date of Birth" maxlength="50" value="{{ old('dob') }}" id="datepicker">
+                    <input name="dob" type="date" class="form-control" placeholder="Date of Birth" maxlength="50" value="{{ old('dob', $user->personnel->dob ?? '') }}" id="datepicker">
                     </div>
                     <div class="col-lg-3">
                         <label class="control-label col-lg-12" for="content">State of Origin:</label>
-                        <input name="state_of_origin" list="state" class="form-control" id="state" maxlength="50" value="{{ old('state_of_origin') }}" placeholder="State of Origin">
+                        <input name="state_of_origin" list="state" class="form-control" id="state" maxlength="50" value="{{ old('state_of_origin', $user->personnel->state_of_origin ?? '') }}" placeholder="State of Origin">
                         <datalist id="state">
                             <option value="Abia">
                             <option value="Adamawa">
@@ -104,15 +104,15 @@
                     </div>
                     <div class="col-lg-3">
                         <label class="control-label col-lg-12" for="content">Nationality </label>
-                        <input name="nationality" type="text" class="form-control" placeholder="Nationality" maxlength="50" value="{{ old('nationality') }}">
+                        <input name="nationality" type="text" class="form-control" placeholder="Nationality" maxlength="50" value="{{ old('nationality', $user->personnel->nationality ?? '') }}">
                     </div>
                     <div class="col-lg-3">
                         <label class="control-label col-lg-12" for="content">Marital Status: </label>
                         <select name="marital_status" class="form-control">
-                            <option disabled {{ old('marital_status') ? '' : 'selected' }}>Marital Status</option>
-                            <option value="Single" {{ old('marital_status') == 'Single' ? 'selected' : '' }}>Single</option>
-                            <option value="Married" {{ old('marital_status') == 'Married' ? 'selected' : '' }}>Married</option>
-                            <option value="Divorced" {{ old('marital_status') == 'Divorced' ? 'selected' : '' }}>Divorced</option>
+                            <option disabled {{ old('marital_status', $user->personnel->marital_status ?? null) ? '' : 'selected' }}>Marital Status</option>
+                            <option value="Single" {{ old('marital_status', $user->personnel->marital_status ?? null) == 'Single' ? 'selected' : '' }}>Single</option>
+                            <option value="Married" {{ old('marital_status', $user->personnel->marital_status ?? null) == 'Married' ? 'selected' : '' }}>Married</option>
+                            <option value="Divorced" {{ old('marital_status', $user->personnel->marital_status ?? null) == 'Divorced' ? 'selected' : '' }}>Divorced</option>
                         </select>
                     </div>
                     </div>
@@ -121,15 +121,15 @@
                     <div class="row form-group">
                         <div class="col-lg-4">
                             <label class="control-label col-lg-12" for="content">Phone No: </label>
-                            <input name="phone_number" type="text" class="form-control" placeholder="Phone Number" maxlength="50" value="{{ old('phone_number') }}">
+                            <input name="phone_number" type="text" class="form-control" placeholder="Phone Number" maxlength="50" value="{{ old('phone_number', $user->personnel->phone_number ?? '') }}">
                         </div>
                         <div class="col-lg-4">
                             <label class="control-label col-lg-12" for="content">E-mail:</label>
-                            <input name="email" type="email" class="form-control" id="titLe" maxlength="100" placeholder="E-mail" value="{{ old('email') }}">
+                            <input name="email" type="email" class="form-control" id="titLe" maxlength="100" placeholder="E-mail" value="{{ old('email', $user->personnel->email ?? '') }}">
                         </div>
                         <div class="col-lg-4">
                             <label class="control-label col-lg-12" for="content">Address: </label>
-                            <textarea col="2" row="" name="address" type="text" class="form-control" placeholder="Address" maxlength="100">{{ old('address') }}</textarea>
+                            <textarea col="2" row="" name="address" type="text" class="form-control" placeholder="Address" maxlength="100">{{ old('address', $user->personnel->address ?? '') }}</textarea>
                         </div>
                     </div>
 
@@ -137,7 +137,7 @@
                         <div class="col-lg-6">
                             <div class="row center"><h4>Educational Information</h4><hr></div>
                             <label class="control-label col-lg-12" for="content">Highest Certificate / School Name / Year of Graduation: </label>
-                            <input name="highest_certificate" list="certificate" class="form-control" placeholder="Highest Certificate" maxlength="50"  value="{{ old('highest_certificate') }}">
+                            <input name="highest_certificate" list="certificate" class="form-control" placeholder="Highest Certificate" maxlength="50"  value="{{ old('highest_certificate', $user->personnel->highest_certificate ?? '') }}">
                             <datalist id="certificate">
                                 <option value="O'Level">
                                 <option value="OND">
@@ -154,9 +154,12 @@
                         <div class="col-lg-6">
                             <div class="row center"><h4>System Role</h4><hr></div>
                             <label class="control-label col-lg-12" for="content">Role: <i class="fas fa-help"></i></label>
-                            <select name="role" class="form-control">
+                            <select name="role[]" class="form-control" multiple>
+                                @php
+                                    $userRoles = $user->getRoleNames();
+                                @endphp
                                 @foreach ($roles as $role)
-                                    <option value="{{ $role }}" {{ old('role', $role->name === $role->name) || $role->name === 'Staff' ? 'selected' : '' }}>{{ $role->name }}</option>
+                                    <option value="{{ $role }}" {{ (collect(old('role', $userRoles))->contains($role->name)) ? 'selected' : '' }}>{{ $role->name }}</option>
                                 @endforeach
                             </select>
 
@@ -167,23 +170,23 @@
                     <div class="row form-group">
                         <div class="col-lg-3">
                             <label class="control-label col-lg-12" for="content">Date Employed: </label>
-                            <input name="employment_date" type="date" class="form-control date" placeholder="Date Employed" id="datepicker2" maxlength="50" value="{{ old('empdate') }}">
+                            <input name="employment_date" type="date" class="form-control date" placeholder="Date Employed" id="datepicker2" maxlength="50" value="{{ old('employment_date', $user->personnel->employment_date ?? '') }}">
                         </div>
                         <div class="col-lg-3">
                             <label for="department" class="form-label">Department</label>
-                            <select class="form-select" id="department" name="department">
-                                 <option selected disabled>Choose Department</option>
+                            <select class="form-select" id="department" name="department" data-selected="{{ old('department', $user->personnel->department ?? '') }}">
+                                <option selected disabled>Choose Department</option>
                             </select>
                         </div>
                         <div class="col-lg-3">
                             <label for="designation" class="form-label">Designation</label>
-                            <select class="form-select" id="designation" name="designation" disabled>
+                            <select class="form-select" id="designation" name="designation" data-selected="{{ old('designation', $user->personnel->designation ?? '') }}" disabled>
                                 <option selected disabled>Choose Designation</option>
                             </select>
                         </div>
                         <div class="col-lg-3">
                             <label class="control-label col-lg-12" for="content">Basic Salary: </label>
-                            <input name="salary" type="number" class="form-control" placeholder="Salary" value="{{ old('salary') }}" maxlength="30">
+                            <input name="salary" type="number" class="form-control" placeholder="Salary" value="{{ old('salary', $user->personnel->salary ?? '') }}" maxlength="30">
                         </div>
                     </div>
 
@@ -336,5 +339,24 @@
 
         designationSelect.disabled = designations.length === 0;
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // Set department if editing
+    const selectedDept = departmentSelect.getAttribute('data-selected');
+        if (selectedDept) {
+            departmentSelect.value = selectedDept;
+            // Trigger change to populate designations
+            const event = new Event('change');
+            departmentSelect.dispatchEvent(event);
+
+            // Set designation if editing
+            const selectedDesig = designationSelect.getAttribute('data-selected');
+            if (selectedDesig) {
+                designationSelect.value = selectedDesig;
+            }
+        }
+    });
+
+
 </script>
 @endsection
