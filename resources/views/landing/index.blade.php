@@ -35,7 +35,7 @@
           <a class="nav-link fw-semibold text-dark" href="#contact"><i class="bi bi-envelope me-1"></i>Contact</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link fw-semibold text-dark" href="{{ route('login') }}" }}"><i class="bi bi-sign-in me-1" style="font-weight: bold; color: darkblue"></i>Sign In</a>
+          <a class="nav-link fw-semibold text-dark" href="{{ route('login') }}"><i class="bi bi-sign-in me-1" style="font-weight: bold; color: darkblue"></i>Demo</a>
         </li>
       </ul>
     </div>
@@ -238,7 +238,7 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ route('company.register') }}" method="POST" id="registrationForm" class="row g-4">
+        <form action="{{ route('register') }}" method="POST" id="registrationForm" class="row g-4">
           @csrf
           <div id="formMessage"></div>
           @if(session('success'))
@@ -299,7 +299,7 @@
     <h2 class="text-center mb-4 animate__animated animate__fadeInDown text-warning">Contact Us</h2>
     <div class="row">
       <div class="col-md-6 mb-4 mb-md-0 animate__animated animate__fadeInLeft">
-        <form id="contactForm" class="p-4 shadow rounded bg-white" action="{{ route('web.enquiry') }}" method="POST">
+        <form id="contactForm" class="p-4 shadow rounded bg-white" action="{{ route('register') }}" method="POST">
           @csrf
 
           @if(session('successful'))
