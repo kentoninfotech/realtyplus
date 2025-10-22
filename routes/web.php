@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\ProjectsController::class, 'landing']);
-
+// Route::get('/', [App\Http\Controllers\ProjectsController::class, 'landing']);
+// Landing Page
+Route::get('/', function () {
+    return view('index');
+});
 
 
 // HOME

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoServe - Automobile Management System</title>
+  <title>RealtyPlus - Real Estate and Properties Management System</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!--style.css-->
   <link rel="stylesheet" href="{{ asset('assets/css/auto.serve.styles.css') }}">
@@ -35,7 +35,7 @@
           <a class="nav-link fw-semibold text-dark" href="#contact"><i class="bi bi-envelope me-1"></i>Contact</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link fw-semibold text-dark" href="{{ route('login') }}" }}"><i class="bi bi-sign-in me-1" style="font-weight: bold; color: darkblue"></i>Sign In</a>
+          <a class="nav-link fw-semibold text-dark" href="{{ route('login') }}"><i class="bi bi-sign-in me-1" style="font-weight: bold; color: darkblue"></i>Demo</a>
         </li>
       </ul>
     </div>
@@ -48,7 +48,7 @@
   <div style="position:absolute;top:-80px;left:-80px;width:260px;height:260px;background:rgba(255,193,7,0.12);border-radius:50%;z-index:0;"></div>
   <div class="container position-relative z-1">
     <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeInDown">
-      Welcome to <span class="text-warning">AutoServe</span>
+      Welcome to <span class="text-warning">RealtyPlus</span>
     </h1>
     <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
       <span class="bg-white bg-opacity-75 px-2 py-1 rounded shadow-sm">Empowering <span class="fw-bold text-primary">Automobile Businesses</span> with Smart Management</span>
@@ -83,8 +83,8 @@
             </div>
             <div class="col-md-6 animate__animated animate__fadeInRight">
               <div class="card border-0 shadow-lg rounded-4 p-4">
-                <h2 class="fw-bold text-primary mb-3"><i class="bi bi-people"></i> Comprehensive Customer & Vehicle Records</h2>
-                <h4 class="text-muted">Maintain detailed records of customers, vehicles, and their complete repair history.</h4>
+                <h2 class="fw-bold text-primary mb-3"><i class="bi bi-people"></i> Comprehensive Properties and Clients Records</h2>
+                <h4 class="text-muted">Maintain detailed records of properties, clients, and their complete transaction history.</h4>
               </div>
             </div>
           </div>
@@ -99,7 +99,7 @@
             <div class="col-md-6 animate__animated animate__fadeInRight">
               <div class="card border-0 shadow-lg rounded-4 p-4">
                 <h2 class="fw-bold text-warning mb-3"><i class="bi bi-bell"></i> Automated Service Reminders</h2>
-                <h4 class="text-muted">Send SMS and email reminders to customers for upcoming services and appointments.</h4>
+                <h4 class="text-muted">Send SMS and email reminders to clients for upcoming property viewings and appointments.</h4>
               </div>
             </div>
           </div>
@@ -139,9 +139,9 @@
     <div class="row align-items-center">
       <div class="col-md-6 mb-4 mb-md-0">
         <div class="p-4 bg-white rounded shadow-lg animate__animated animate__fadeInLeft" style="border-left: 6px solid #0d6efd;">
-          <h2 class="fw-bold mb-3 text-primary">Why Choose AutoServe?</h2>
+          <h2 class="fw-bold mb-3 text-primary">Why Choose RealtyPlus?</h2>
           <div class="mb-3">
-            <span class="badge bg-primary me-2 mb-2"><i class="bi bi-people"></i> Customer & Vehicle Management</span>
+            <span class="badge bg-primary me-2 mb-2"><i class="bi bi-people"></i> Client & Property Management</span>
             <span class="badge bg-success me-2 mb-2"><i class="bi bi-clock-history"></i> Repair History Tracking</span>
             <span class="badge bg-warning text-dark me-2 mb-2"><i class="bi bi-bell"></i> Automated Reminders</span>
             <span class="badge bg-info text-dark me-2 mb-2"><i class="bi bi-box-seam"></i> Inventory</span>
@@ -149,7 +149,7 @@
             <span class="badge bg-dark me-2 mb-2"><i class="bi bi-person-badge"></i> Staff & Payroll</span>
           </div>
           <div class="alert alert-primary mt-3 mb-3 fw-semibold animate__animated animate__pulse animate__delay-1s">
-            "All-in-one platform to streamline your automobile business, boost customer satisfaction, and grow your revenue."
+            "All-in-one platform to streamline your real estate business, boost client satisfaction, and grow your revenue."
           </div>
           <ul class="list-unstyled">
             <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Easy-to-use dashboard for all your business needs</li>
@@ -206,7 +206,7 @@
       <div class="col-md-4 animate__animated animate__fadeInLeft animate__delay-1s">
         <div class="testimonial p-4 shadow rounded mb-4 bg-white">
           <div class="mb-2"><i class="bi bi-chat-quote text-primary fs-2"></i></div>
-          <p>"AutoServe has transformed our business. Managing customers and inventory has never been easier!"</p>
+          <p>"RealtyPlus has transformed our business. Managing clients and properties has never been easier!"</p>
           <h6 class="mt-3">- Abdue A., Kojo Autos, Abuja</h6>
         </div>
       </div>
@@ -238,7 +238,7 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="{{ route('company.register') }}" method="POST" id="registrationForm" class="row g-4">
+        <form action="{{ route('register') }}" method="POST" id="registrationForm" class="row g-4">
           @csrf
           <div id="formMessage"></div>
           @if(session('success'))
@@ -299,7 +299,7 @@
     <h2 class="text-center mb-4 animate__animated animate__fadeInDown text-warning">Contact Us</h2>
     <div class="row">
       <div class="col-md-6 mb-4 mb-md-0 animate__animated animate__fadeInLeft">
-        <form id="contactForm" class="p-4 shadow rounded bg-white" action="{{ route('web.enquiry') }}" method="POST">
+        <form id="contactForm" class="p-4 shadow rounded bg-white" action="{{ route('register') }}" method="POST">
           @csrf
 
           @if(session('successful'))
