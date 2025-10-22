@@ -160,7 +160,10 @@
         </div>
       </div>
       <div class="col-md-6 text-center animate__animated animate__fadeInRight">
-        <img src="assets/images/about.jpg" alt="About AutoServe" class="img-fluid rounded shadow-lg" style="max-width: 90%;">
+        {{-- <img src="assets/images/about.jpg" alt="About RealtyPlus" class="img-fluid rounded shadow-lg" style="max-width: 90%;"> --}}
+        <div class="ratio ratio-16x9 shadow-lg rounded">
+          <iframe src="https://www.youtube.com/embed/cnSLT5f957s" title="RealtyPlus Overview" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
     <!-- Decorative Shape -->
@@ -347,8 +350,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 mb-3 mb-md-0">
-          <h5>AutoServe</h5>
-          <p>Empowering Automobile Businesses</p>
+          <h5>RealtyPlus</h5>
+          <p>Empowering Real Estate Businesses</p>
         </div>
         <div class="col-md-6 text-md-end">
           <a href="#about" class="text-white me-3">About Us</a>
@@ -357,13 +360,13 @@
         </div>
       </div>
       <div class="text-center mt-3">
-        <small>&copy; {{date("Y")}} AutoServe. All rights reserved.</small>
+        <small>&copy; {{date("Y")}} RealtyPlus. All rights reserved.</small>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!--Custom JS-->
-  <script src="{{ asset('assets/js/auto.serve.scripts.js') }}"></script>
+  <script src="{{ asset('assets/js/realtyplus.scripts.js') }}"></script>
 </body>
 </html>
