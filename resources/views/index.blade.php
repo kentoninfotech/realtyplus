@@ -17,7 +17,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-sm fixed-top py-2 border-bottom animate__animated animate__fadeInDown" style="background:rgba(255,255,255,0.98)!important;">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center fw-bold text-primary fs-3" href="#">
-      <i class="bi bi-gear-fill me-2 text-warning fs-2"></i>AutoServe
+      <i class="bi bi-gear-fill me-2 text-warning fs-2"></i>RealtyPlus
     </a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
