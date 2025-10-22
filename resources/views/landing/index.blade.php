@@ -1,490 +1,369 @@
-@extends('layouts.template_landing')
-
-@section('content')
-
-
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="{{asset('dist/landing/img/carousel-2.jpg')}}" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-start">
-                                <div class="col-lg-8">
-                                    <p
-                                        class="d-inline-block border border-white rounded text-primary fw-semi-bold py-1 px-3 animated slideInDown">
-                                        Welcome to STRIDDERR Global Services</p>
-                                    <h1 class="display-1 mb-4 animated slideInDown">...Building, Construction, Real Estate
-                                    </h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="{{asset('dist/landing/img/carousel-1.jpg')}}" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-start">
-                                <div class="col-lg-7">
-                                    <p
-                                        class="d-inline-block border border-white rounded text-primary fw-semi-bold py-1 px-3 animated slideInDown">
-                                        Welcome to STRIDDER Global Services</p>
-                                    <h1 class="display-1 mb-4 animated slideInDown">Building Construction</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RealtyPlus - Real Estate and Properties Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!--style.css-->
+  <link rel="stylesheet" href="{{ asset('assets/css/auto.serve.styles.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-sm fixed-top py-2 border-bottom animate__animated animate__fadeInDown" style="background:rgba(255,255,255,0.98)!important;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center fw-bold text-primary fs-3" href="#">
+      <i class="bi bi-gear-fill me-2 text-warning fs-2"></i>AutoServe
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item mx-2">
+          <a class="nav-link fw-semibold text-dark" href="#featuresCarousel"><i class="bi bi-stars me-1"></i>Features</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link fw-semibold text-dark" href="#about"><i class="bi bi-info-circle me-1"></i>About</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link fw-semibold text-dark" href="#" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="bi bi-person-plus me-1"></i>Register</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link fw-semibold text-dark" href="#contact"><i class="bi bi-envelope me-1"></i>Contact</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link fw-semibold text-dark" href="{{ route('login') }}" }}"><i class="bi bi-sign-in me-1" style="font-weight: bold; color: darkblue"></i>Sign In</a>
+        </li>
+      </ul>
     </div>
-    <!-- Carousel End -->
+  </div>
+</nav>
 
-
-    <!-- About Start -->
-    <div class="container-xxl py-5" id="about">
-        <div class="container">
-            <div class="row g-4 align-items-end mb-4">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid rounded" src="{{asset('dist/landing/img/about.jpg')}}">
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">About Us</p>
-                    <h1 class="display-5 mb-4">We provide cutting-edge building and infrastructures</h1>
-                    <p class="mb-4">
-                       <br>
-                       At STRIDDERR Global Services Ltd, we pride ourselves on being a leading force in the construction industry, dedicated to building high-quality homes and providing exceptional architectural services. With years of experience under our belt, our team of skilled professionals is committed to transforming your vision into reality. We believe that every project we undertake is a testament to our unwavering dedication to excellence, innovation, and craftsmanship. From conceptual design to project completion, we ensure that every detail is meticulously planned and executed, delivering results that exceed our clients' expectations.
-
-                    </p>
-                    <div class="border rounded p-4">
-                        <nav>
-                            <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
-                                <button class="nav-link fw-semi-bold active" id="nav-story-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-story" type="button" role="tab" aria-controls="nav-story"
-                                    aria-selected="true">Moto</button>
-                                <button class="nav-link fw-semi-bold" id="nav-mission-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-mission" type="button" role="tab" aria-controls="nav-mission"
-                                    aria-selected="false">Mission</button>
-                                <button class="nav-link fw-semi-bold" id="nav-vision-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-vision" type="button" role="tab" aria-controls="nav-vision"
-                                    aria-selected="false">Vision</button>
-                            </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-story" role="tabpanel"
-                                aria-labelledby="nav-story-tab">
-                                <p>"Building Dreams, Creating Futures."</p>
-
-                            </div>
-                            <div class="tab-pane fade" id="nav-mission" role="tabpanel"
-                                aria-labelledby="nav-mission-tab">
-                                <p>At STRIDDERR Global Services Ltd, our mission is to deliver exceptional construction, architectural, and civil infrastructure services that exceed our clients' expectations. We are dedicated to transforming visions into reality through innovative design, superior craftsmanship, and sustainable practices. Our commitment is to build not just structures, but lasting relationships with our clients, partners, and communities, ensuring the highest standards of quality, safety, and integrity in everything we do.</p>
-                            </div>
-                            <div class="tab-pane fade" id="nav-vision" role="tabpanel" aria-labelledby="nav-vision-tab">
-                                <p>Our vision at STRIDDERR Global Services Ltd is to be the premier construction company renowned for excellence, innovation, and sustainability. We aspire to lead the industry in creating iconic, enduring structures that enhance the quality of life and contribute to the development of vibrant, resilient communities. By continuously pushing the boundaries of what’s possible in construction and design, we aim to set new benchmarks for quality and efficiency, inspiring a future where our built environment harmonizes with the natural world.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="border rounded p-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="row g-4">
-                    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                        <div class="h-100">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-times text-white"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <h4>Commitment to Excellence</h4>
-                                    <span>Our Solutions are tailored to client needs.</span>
-                                </div>
-                                <div class="border-end d-none d-lg-block"></div>
-                            </div>
-                            <div class="border-bottom mt-4 d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                        <div class="h-100">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-users text-white"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <h4>Dedicated Team</h4>
-                                    <span>We have an excellent Team of professional you can really on.</span>
-                                </div>
-                                <div class="border-end d-none d-lg-block"></div>
-                            </div>
-                            <div class="border-bottom mt-4 d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                        <div class="h-100">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-phone text-white"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <h4>24/7 Available</h4>
-                                    <span>We just a call away from delivering our Services</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- Hero Section -->
+<section class="hero d-flex align-items-center justify-content-center text-center position-relative" style="padding-top: 100px; min-height: 80vh; overflow: hidden;">
+  <!-- Decorative Shape -->
+  <div style="position:absolute;top:-80px;left:-80px;width:260px;height:260px;background:rgba(255,193,7,0.12);border-radius:50%;z-index:0;"></div>
+  <div class="container position-relative z-1">
+    <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeInDown">
+      Welcome to <span class="text-warning">RealtyPlus</span>
+    </h1>
+    <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+      <span class="bg-white bg-opacity-75 px-2 py-1 rounded shadow-sm">Empowering <span class="fw-bold text-primary">Automobile Businesses</span> with Smart Management</span>
+    </p>
+    <button class="btn btn-lg btn-warning text-dark fw-semibold shadow animate__animated animate__pulse animate__infinite" data-bs-toggle="modal" data-bs-target="#registerModal">
+      <i class="bi bi-rocket-takeoff me-2"></i>Get Started
+    </button>
+    <div class="mt-5 animate__animated animate__fadeInUp animate__delay-2s">
+      <a href="#featuresCarousel" class="text-white-50 text-decoration-none">
+        <div class="d-flex flex-column align-items-center">
+          <span class="mb-1">Scroll Down</span>
+          <i class="bi bi-chevron-double-down fs-2"></i>
         </div>
+      </a>
     </div>
-    <!-- About End -->
+  </div>
+  <!-- Decorative Shape Bottom Right -->
+  <div style="position:absolute;bottom:-80px;right:-80px;width:200px;height:200px;background:rgba(13,110,253,0.10);border-radius:50%;z-index:0;"></div>
+</section>
 
-
-    <!-- Facts Start -->
-    <div class="container-fluid facts my-5 py-5">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-                    <i class="fa fa-users fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">87</h1>
-                    <span class="fs-5 text-white">Happy Clients</span>
-                    <hr class="bg-white w-25 mx-auto mb-0">
-                </div>
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-                    <i class="fa fa-check fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">14</h1>
-                    <span class="fs-5 text-white">Projects Completed</span>
-                    <hr class="bg-white w-25 mx-auto mb-0">
-                </div>
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">15</h1>
-                    <span class="fs-5 text-white">Dedicated Staff</span>
-                    <hr class="bg-white w-25 mx-auto mb-0">
-                </div>
-                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-                    <i class="fa fa-award fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">132</h1>
-                    <span class="fs-5 text-white">Ungoing</span>
-                    <hr class="bg-white w-25 mx-auto mb-0">
-                </div>
+  <!-- Features Carousel -->
+  <section class="features-carousel py-5 position-relative" style="background: linear-gradient(90deg, #f8f9fa 60%, #e9ecef 100%); overflow: hidden;">
+  <div class="container position-relative">
+    <div id="featuresCarousel" class="carousel slide animate__animated animate__fadeInUp" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center animate__animated animate__fadeInLeft">
+              <div class="card border-0 shadow-lg rounded-4 overflow-hidden feature-carousel-img-card animate__animated animate__zoomIn">
+                <img src="assets/images/feature1.jpg" class="d-block w-100" alt="Customer Management">
+              </div>
             </div>
+            <div class="col-md-6 animate__animated animate__fadeInRight">
+              <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h2 class="fw-bold text-primary mb-3"><i class="bi bi-people"></i> Comprehensive Properties and Clients Records</h2>
+                <h4 class="text-muted">Maintain detailed records of properties, clients, and their complete transaction history.</h4>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <!-- Facts End -->
-
-
-    <!-- Features Start -->
-    <div class="container-xxl feature py-5">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Why Choosing Us!</p>
-                    <h1 class="display-5 mb-4">Reasons Why People Are Choosing Us!</h1>
-                    <p class="mb-4">
-
-                        <b>Unmatched Quality and Craftsmanship</b><br>
-
-                        At STRIDDERR Global Services Ltd, we understand that quality is paramount in construction. Our team of experienced professionals is committed to delivering superior craftsmanship in every project we undertake. From residential homes to commercial buildings and civil infrastructure, we use only the highest quality materials and adhere to rigorous standards to ensure the longevity and durability of our constructions. Our meticulous attention to detail and dedication to excellence result in structures that not only meet but exceed our clients' expectations.
-                        <br><br>
-
-                        <b>Comprehensive and Customized Services</b>
-                        <br>
-                        We offer a wide range of services tailored to meet the unique needs of our clients. Whether you require architectural design, residential construction, or large-scale civil infrastructure projects, STRIDDERR Global Services Ltd provides end-to-end solutions. Our comprehensive services include site analysis, space planning, 3D modeling, interior design, and project management. By working closely with our clients, we ensure that every aspect of the project aligns with their vision, budget, and timeline. This personalized approach sets us apart and ensures that each project is a true reflection of our clients' aspirations.
-                        <br><br>
-
-                        <b>Commitment to Sustainability and Innovation</b>
-                        <br>
-                        In today's world, sustainability is more important than ever. At STRIDDERR Global Services Ltd, we are committed to incorporating sustainable practices into all our projects. We utilize eco-friendly materials, energy-efficient designs, and cutting-edge technologies to minimize our environmental impact and promote long-term sustainability. Our innovative approach to construction not only benefits the environment but also provides our clients with energy-efficient and cost-effective solutions. By choosing us, clients are investing in a future where their structures are both beautiful and environmentally responsible.
-                        <br><br>
-                        People choose STRIDDERR Global Services Ltd because we deliver exceptional quality, offer customized and comprehensive services, and are committed to sustainability and innovation. Our reputation for excellence, our dedication to client satisfaction, and our forward-thinking approach make us the preferred choice for construction and architectural services.
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-md-6">
-                            <div class="row g-4">
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
-                                    <div class="feature-box border rounded p-4">
-                                        <i class="fa fa-check fa-3x text-primary mb-3"></i>
-                                        <h4 class="mb-3">Fast Executions</h4>
-                                        <p class="mb-3">boasts a team of highly skilled professionals with extensive expertise in the field of architecture and building construction. </p>
-                                        <a class="fw-semi-bold" href="service.php">Read More <i
-                                                class="fa fa-arrow-right ms-1"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
-                                    <div class="feature-box border rounded p-4">
-                                        <i class="fa fa-check fa-3x text-primary mb-3"></i>
-                                        <h4 class="mb-3">Guide & Support</h4>
-                                        <p class="mb-3"> Customer satisfaction is at the core of everything we do. We prioritize open communication, actively listening to your needs, and keeping you informed throughout the project lifecycle.</p>
-                                        <a class="fw-semi-bold" href="service.php">Read More <i
-                                                class="fa fa-arrow-right ms-1"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
-                            <div class="feature-box border rounded p-4">
-                                <i class="fa fa-check fa-3x text-primary mb-3"></i>
-                                <h4 class="mb-3">Financial Secure</h4>
-                                <p class="mb-3">Our pricing models are transparent, and we work with you to find the most suitable solution that aligns with your budgetary requirements.</p>
-                                <a class="fw-semi-bold" href="service.php">Read More <i class="fa fa-arrow-right ms-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="carousel-item">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center animate__animated animate__fadeInLeft">
+              <div class="card border-0 shadow-lg rounded-4 overflow-hidden feature-carousel-img-card animate__animated animate__zoomIn">
+                <img src="assets/images/feature2.jpg" class="d-block w-100" alt="Service Reminders">
+              </div>
             </div>
+            <div class="col-md-6 animate__animated animate__fadeInRight">
+              <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h2 class="fw-bold text-warning mb-3"><i class="bi bi-bell"></i> Automated Service Reminders</h2>
+                <h4 class="text-muted">Send SMS and email reminders to clients for upcoming property viewings and appointments.</h4>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <!-- Features End -->
-
-
-    <!-- Service Start -->
-    <div class="container-xxl service py-5" id="services">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Services</p>
-                <h1 class="display-5 mb-5">STRIDDERR Global Services Ltd Services</h1>
+        <div class="carousel-item">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center animate__animated animate__fadeInLeft">
+              <div class="card border-0 shadow-lg rounded-4 overflow-hidden feature-carousel-img-card animate__animated animate__zoomIn">
+                <img src="assets/images/feature3.jpg" class="d-block w-100" alt="Inventory & Invoicing">
+              </div>
             </div>
-            <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-lg-4">
-                    <div class="nav nav-pills d-flex justify-content-between w-100 h-100 me-4">
-                        <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4 active"
-                            data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Building Construction</h5>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4"
-                            data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Property Management</h5>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4"
-                            data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Architectural Services</h5>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-0"
-                            data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Estate Development</h5>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="tab-content w-100">
-                        <div class="tab-pane fade show active" id="tab-pane-1">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="{{asset('dist/landing/img/service-1.jpg')}}"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-4">Building Construction</h3>
-                                    <p class="mb-4">At STRIDDERR Global Services Ltd, our building construction services are designed to bring our clients' visions to life with precision and excellence. We handle every aspect of the construction process, from initial planning and design to the final finishing touches, ensuring that each project is completed on time, within budget, and to the highest standards. Whether it's a residential home, commercial building, or industrial facility, our experienced team leverages the latest construction technologies and best practices to deliver structures that are durable, functional, and aesthetically pleasing.</p>
-
-                                    {{-- <a href="service.php" class="btn btn-primary py-3 px-5 mt-3">Read More</a> --}}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-2">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="{{asset('dist/landing/img/service-3.jpg')}}"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-4">Property Management</h3>
-                                    <p class="mb-4">Our property management services at STRIDDERR Global Services Ltd provide comprehensive solutions to ensure the smooth operation and maintenance of your real estate assets. We offer a full range of services, including tenant management, property maintenance, financial reporting, and lease administration. Our dedicated team works diligently to enhance the value of your property, maximize occupancy rates, and ensure a seamless experience for both property owners and tenants. With our professional and proactive approach, you can trust us to manage your properties with the utmost care and efficiency.</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-3">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="{{asset('dist/landing/img/service-2.jpg')}}"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-4">Architectural Services</h3>
-                                    <p class="mb-4">STRIDDERR Global Services Ltd offers a wide array of architectural services that blend creativity with functionality to create inspiring and practical spaces. Our team of skilled architects collaborates closely with clients to understand their needs and preferences, providing innovative design solutions that reflect their vision. From concept development and 3D modeling to detailed construction drawings and project management, we ensure that every architectural project is executed with precision and attention to detail. Our commitment to sustainability and cutting-edge design ensures that our projects are not only beautiful but also environmentally responsible.</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="tab-pane-4">
-                            <div class="row g-4">
-                                <div class="col-md-6" style="min-height: 350px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="{{asset('dist/landing/img/service-4.jpg')}}"
-                                            style="object-fit: cover;" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <h3 class="mb-4">In estate development, STRIDDERR Global Services Ltd excels at transforming raw land into vibrant, livable communities. We manage the entire development process, from land acquisition and planning to infrastructure development and construction. Our approach is holistic, ensuring that every aspect of the estate is thoughtfully designed and executed to create harmonious and sustainable living environments. By integrating modern amenities, green spaces, and efficient infrastructure, we develop estates that offer a high quality of life and a strong sense of community for residents.</p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-6 animate__animated animate__fadeInRight">
+              <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h2 class="fw-bold text-secondary mb-3"><i class="bi bi-receipt"></i> Inventory & Invoice Management</h2>
+                <h4 class="text-muted">Track inventory, generate invoices, receipts, and manage payroll and staff tasks efficiently.</h4>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#featuresCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#featuresCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <!-- Service End -->
+    <div style="position:absolute;bottom:-60px;left:-60px;width:180px;height:180px;background:rgba(13,110,253,0.08);border-radius:50%;z-index:0;"></div>
+  </div>
+</section>
 
-
-    <!-- Callback Start -->
-    <div class="container-fluid callback my-5 pt-5" id="contact">
-        <div class="container pt-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="bg-white border rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                            <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Get In Touch
-                            </p>
-                            <h1 class="display-5 mb-5">Request A Call-Back</h1>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="mail" placeholder="Your Email">
-                                    <label for="mail">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
-                                    <label for="mobile">Your Mobile</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                        style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- About Us Section -->
+  <section id="about" class="about-us py-5 position-relative" style="background: linear-gradient(90deg, #e3f2fd 60%, #fff 100%); overflow: hidden;">
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <div class="p-4 bg-white rounded shadow-lg animate__animated animate__fadeInLeft" style="border-left: 6px solid #0d6efd;">
+          <h2 class="fw-bold mb-3 text-primary">Why Choose RealtyPlus?</h2>
+          <div class="mb-3">
+            <span class="badge bg-primary me-2 mb-2"><i class="bi bi-people"></i> Client & Property Management</span>
+            <span class="badge bg-success me-2 mb-2"><i class="bi bi-clock-history"></i> Repair History Tracking</span>
+            <span class="badge bg-warning text-dark me-2 mb-2"><i class="bi bi-bell"></i> Automated Reminders</span>
+            <span class="badge bg-info text-dark me-2 mb-2"><i class="bi bi-box-seam"></i> Inventory</span>
+            <span class="badge bg-secondary me-2 mb-2"><i class="bi bi-receipt"></i> Invoicing</span>
+            <span class="badge bg-dark me-2 mb-2"><i class="bi bi-person-badge"></i> Staff & Payroll</span>
+          </div>
+          <div class="alert alert-primary mt-3 mb-3 fw-semibold animate__animated animate__pulse animate__delay-1s">
+            "All-in-one platform to streamline your real estate business, boost client satisfaction, and grow your revenue."
+          </div>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Easy-to-use dashboard for all your business needs</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Real-time notifications and reminders</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Secure cloud-based data storage</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 24/7 customer support</li>
+          </ul>
         </div>
+      </div>
+      <div class="col-md-6 text-center animate__animated animate__fadeInRight">
+        <img src="assets/images/about.jpg" alt="About AutoServe" class="img-fluid rounded shadow-lg" style="max-width: 90%;">
+      </div>
     </div>
-    <!-- Callback End -->
+    <!-- Decorative Shape -->
+    <div style="position:absolute;top:-60px;right:-60px;width:180px;height:180px;background:rgba(13,110,253,0.08);border-radius:50%;z-index:0;"></div>
+  </div>
+</section>
 
-
-    <!-- Projects Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Projects</p>
-                <h1 class="display-5 mb-5">We Have Completed Latest Projects</h1>
-            </div>
-            <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
-                <div class="project-item pe-5 pb-5">
-                    <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="{{asset('dist/landing/img/Social Media Ad.jpg')}}" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
-                    </div>
-                    <div class="project-title">
-                        <h4 class="mb-0">Product Ready</h4>
-                    </div>
-                </div>
-                <div class="project-item pe-5 pb-5">
-                    <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="{{asset('dist/landing/img/Social-Media-001.jpg')}}" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
-                    </div>
-                    <div class="project-title">
-                        <h4 class="mb-0">Product Ready</h4>
-                    </div>
-                </div>
-                <div class="project-item pe-5 pb-5">
-                    <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="{{asset('dist/landing/img/Social-Media-002.jpg')}}" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
-                    </div>
-                    <div class="project-title">
-                        <h4 class="mb-0">Product Ready</h4>
-                    </div>
-                </div>
-                <div class="project-item pe-5 pb-5">
-                    <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="{{asset('dist/landing/img/Social-Media-004.jpg')}}" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
-                    </div>
-                    <div class="project-title">
-                        <h4 class="mb-0">Product Ready</h4>
-                    </div>
-                </div>
-            </div>
+  <!-- Features Section -->
+  <section class="features py-5 bg-light position-relative" style="overflow: hidden;">
+  <div class="container position-relative">
+    <div class="row text-center">
+      <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="feature-box p-4 shadow-sm rounded bg-white h-100">
+          <div class="mb-3"><span class="badge bg-primary"><i class="bi bi-people fs-2"></i></span></div>
+          <h5 class="fw-bold">Customer Management</h5>
+          <p>Centralized customer and vehicle data for quick access and updates.</p>
         </div>
-    </div>
-    <!-- Projects End -->
-
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Testimonial</p>
-                <h1 class="display-5 mb-5">What Our Clients Say!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
-                <div class="testimonial-item">
-                    <div class="testimonial-text border rounded p-4 pt-5 mb-5">
-                        <div class="btn-square bg-white border rounded-circle">
-                            <i class="fa fa-quote-right fa-2x text-primary"></i>
-                        </div>
-                        “I’m always impressed with the services from STRIDDER.”
-                    </div>
-                    <img class="rounded-circle mb-3" src="{{asset('dist/landing/img/download.png')}}" alt="">
-                    <h4>Kojo Motors</h4>
-                    <span>Auto-repair</span>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text border rounded p-4 pt-5 mb-5">
-                        <div class="btn-square bg-white border rounded-circle">
-                            <i class="fa fa-quote-right fa-2x text-primary"></i>
-                        </div>
-                        “Keep it up STRIDDERR, I got my projects fixed.”
-                    </div>
-                    <img class="rounded-circle mb-3" src="{{asset('dist/landing/img/download (1).png')}}" alt="">
-                    <h4>Realty Plus</h4>
-                    <span>Realty</span>
-                </div>
-            </div>
+      </div>
+      <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="feature-box p-4 shadow-sm rounded bg-white h-100">
+          <div class="mb-3"><span class="badge bg-warning text-dark"><i class="bi bi-bell fs-2"></i></span></div>
+          <h5 class="fw-bold">Service Reminders</h5>
+          <p>Automated notifications to keep your customers coming back.</p>
         </div>
+      </div>
+      <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-3s">
+        <div class="feature-box p-4 shadow-sm rounded bg-white h-100">
+          <div class="mb-3"><span class="badge bg-secondary"><i class="bi bi-receipt fs-2"></i></span></div>
+          <h5 class="fw-bold">Inventory & Billing</h5>
+          <p>Manage stock, generate invoices, and track payments
+        </div>
+      </div>
     </div>
-    <!-- Testimonial End -->
+    <div style="position:absolute;top:-60px;right:-60px;width:180px;height:180px;background:rgba(255,193,7,0.08);border-radius:50%;z-index:0;"></div>
+  </div>
+</section>
 
-@endsection
+  <!-- Customer Testimony Section -->
+  <section class="testimonials py-5 position-relative" style="background: linear-gradient(90deg, #fff 60%, #e3f2fd 100%); overflow: hidden;">
+  <div class="container position-relative">
+    <h2 class="text-center mb-5 animate__animated animate__fadeInDown">What Our Customers Say</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-4 animate__animated animate__fadeInLeft animate__delay-1s">
+        <div class="testimonial p-4 shadow rounded mb-4 bg-white">
+          <div class="mb-2"><i class="bi bi-chat-quote text-primary fs-2"></i></div>
+          <p>"RealtyPlus has transformed our business. Managing clients and properties has never been easier!"</p>
+          <h6 class="mt-3">- Abdue A., Kojo Autos, Abuja</h6>
+        </div>
+      </div>
+      <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="testimonial p-4 shadow rounded mb-4 bg-white">
+          <div class="mb-2"><i class="bi bi-chat-quote text-warning fs-2"></i></div>
+          <p>"The automated reminders keep our customers happy and coming back. Highly recommended!"</p>
+          <h6 class="mt-3">- Edima K., Taharish Automobile, Abuja</h6>
+        </div>
+      </div>
+      <div class="col-md-4 animate__animated animate__fadeInRight animate__delay-3s">
+        <div class="testimonial p-4 shadow rounded mb-4 bg-white">
+          <div class="mb-2"><i class="bi bi-chat-quote text-success fs-2"></i></div>
+          <p>"Inventory and billing are now seamless. Our staff loves the new system!"</p>
+          <h6 class="mt-3">- Juliana B., AutoWellness Center, Lagos</h6>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;bottom:-60px;left:-60px;width:180px;height:180px;background:rgba(13,110,253,0.08);border-radius:50%;z-index:0;"></div>
+  </div>
+</section>
+
+  <!-- Registration Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" style="background-color: rgba(0, 0, 0, 0.1);">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="registerModalLabel">Register an Account</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('company.register') }}" method="POST" id="registrationForm" class="row g-4">
+          @csrf
+          <div id="formMessage"></div>
+          @if(session('success'))
+            <div class="alert alert-success">
+              <strong>{{session('success')}}</strong>
+            </div>
+          @endif
+          @if ($errors->any())
+            <div class="alert alert-danger">
+              <ul>
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
+          <div class="col-md-6">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" name="name" value="{{old('name')}}" class="form-control" id="name" required autofocus>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" name="email" value="{{old('email')}}" class="form-control" id="email" required>
+          </div>
+          <div class="col-md-6">
+            <label for="phone_number" class="form-label">Phone Number</label>
+            <input type="text" name="phone_number" value="{{old('phone_number')}}" class="form-control" id="phone_number" required>
+          </div>
+          <div class="col-md-6">
+            <label for="company_name" class="form-label">Company Name</label>
+            <input type="text" name="company_name" value="{{old('company_name')}}" class="form-control" id="company_name" required>
+          </div>
+          <div class="col-md-6">
+            <label for="address" class="form-label">Company Address</label>
+            <textarea name="address" class="form-control" id="address" rows="3">{{old('address')}}</textarea>
+          </div>
+          <div class="col-md-6">
+            <label for="deployment_type" class="form-label">Deployment Method</label>
+            <select name="deployment_type" class="form-select" id="deployment_type" required>
+              <option value="" disabled selected>Select Deployment Method</option>
+              <option value="online">Online</option>
+              <option value="on-premise">On-Premise</option>
+              <option value="subscription">Subscription</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100 mb-3">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="contact-us py-5 position-relative" style="background: url('assets/images/bg1.jpg') center/cover no-repeat; overflow: hidden;">
+  <div class="container position-relative">
+    <h2 class="text-center mb-4 animate__animated animate__fadeInDown text-warning">Contact Us</h2>
+    <div class="row">
+      <div class="col-md-6 mb-4 mb-md-0 animate__animated animate__fadeInLeft">
+        <form id="contactForm" class="p-4 shadow rounded bg-white" action="{{ route('web.enquiry') }}" method="POST">
+          @csrf
+
+          @if(session('successful'))
+            <div class="alert alert-success">
+              <strong>{{session('successful')}}</strong>
+            </div>
+          @endif
+          @if(session('errorful'))
+            <div class="alert alert-danger">
+              <strong>{{session('errorful')}}</strong>
+            </div>
+          @endif
+          <div class="mb-3">
+            <label for="contactName" class="form-label">Your Name</label>
+            <input type="text" class="form-control form-control-sm" id="contactName" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control form-control-sm" id="contactEmail" name="email" required>
+          </div>
+          <input type="hidden" name="subject" value="AutoServe | Web Enquiry">
+          <div class="mb-3">
+            <label for="contactMessage" class="form-label">Message</label>
+            <textarea class="form-control form-control-sm" id="contactMessage" rows="4" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          <div id="contactFormMessage" class="mt-3"></div>
+        </form>
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center animate__animated animate__fadeInRight">
+        <div class="ps-md-4 bg-dark bg-opacity-75 p-4 rounded text-white">
+          <div class="mb-3"><i class="bi bi-envelope-at text-primary fs-3 me-2"></i><a href="mailto:info@autoserve.com" class="text-white text-decoration-underline">info@autoserve.com.ng</a></div>
+          <div class="mb-3"><i class="bi bi-telephone text-success fs-3 me-2"></i><a href="tel:+1234567890" class="text-white text-decoration-underline">+234 913 109 5135</a></div>
+          <div class="mb-3"><i class="bi bi-geo-alt text-danger fs-3 me-2"></i>Peace Park Building, Utako, Abuja</div>
+          <div class="alert alert-info mt-3">We respond within 24 hours. Your information is safe with us!</div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;top:-60px;right:-60px;width:180px;height:180px;background:rgba(13,110,253,0.08);border-radius:50%;z-index:0;"></div>
+  </div>
+</section>
+
+  <!-- Footer Section -->
+  <footer class="footer py-4 bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <h5>AutoServe</h5>
+          <p>Empowering Automobile Businesses</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="#about" class="text-white me-3">About Us</a>
+          <a href="#" class="text-white me-3" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+          <a href="#contact" class="text-white">Contact</a>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <small>&copy; {{date("Y")}} AutoServe. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!--Custom JS-->
+  <script src="{{ asset('assets/js/auto.serve.scripts.js') }}"></script>
+</body>
+</html>
