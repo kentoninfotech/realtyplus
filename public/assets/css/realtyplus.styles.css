@@ -1,0 +1,19 @@
+.whatsapp-float{
+  position: fixed;
+  width:56px;
+  height:56px;
+  bottom:30px;
+  right:20px;
+  background-color:#25D366;
+  color:#fff;
+  border-radius:50px;
+  text-align:center;
+  font-size:24px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.social{ color: #333; text-decoration:none; }
+@media (max-width:768px){ .carousel-caption{ display:block; bottom:10%; } }

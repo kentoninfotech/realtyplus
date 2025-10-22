@@ -6,7 +6,7 @@
   <title>RealtyPlus - Real Estate and Properties Management System</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!--style.css-->
-  <link rel="stylesheet" href="{{ asset('assets/css/auto.serve.styles.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/realtyplus.styles.css') }}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
@@ -364,6 +364,11 @@
       </div>
     </div>
   </footer>
+    <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/2347067973091" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!--Custom JS-->
