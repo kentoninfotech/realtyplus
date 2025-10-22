@@ -1,0 +1,107 @@
+<?php
+
+namespace App\Policies;
+
+use App\Models\User;
+use App\Models\projects;
+use Illuminate\Auth\Access\HandlesAuthorization;
+
+class ProjectsPolicy
+{
+    use HandlesAuthorization;
+
+    /**
+     * Determine whether the user can view any models.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function viewAny(User $user)
+    {
+        if ($user->can('view project')) {
+            return true;
+        }
+        return $this->deny('You do not have permission to view projects.');
+    }
+
+    /**
+     * Determine whether the user can view the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\projects  $projects
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function view(User $user, projects $projects)
+    {
+        if ($user->hasRole('Client')) {
+            return $projects->client_id === $user->id;
+        }
+
+        return $user->can('view project');
+    }
+
+    /**
+     * Determine whether the user can create models.
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function create(User $user)
+    {
+       if ($user->can('create project')) {
+            return true;
+        }
+        return $this->deny('You do not have permission to create projects.');
+    }
+
+    /**
+     * Determine whether the user can update the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\projects  $projects
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function update(User $user, projects $projects)
+    {
+        if ($user->can('edit project')) {
+            return true;
+        }
+        return $this->deny('You do not have permission to update projects.');
+    }
+
+    /**
+     * Determine whether the user can delete the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\projects  $projects
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function delete(User $user, projects $projects)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can restore the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\projects  $projects
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function restore(User $user, projects $projects)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can permanently delete the model.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\projects  $projects
+     * @return \Illuminate\Auth\Access\Response|bool
+     */
+    public function forceDelete(User $user, projects $projects)
+    {
+        //
+    }
+}
